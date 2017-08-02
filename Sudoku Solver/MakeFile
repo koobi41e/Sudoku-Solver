@@ -1,0 +1,27 @@
+CFLAGS = -g -Wall -Wshadow -O
+CC     = g++
+LINK   = g++
+
+sudoku: sudoku.o intset.o
+$(LINK) -o sudoku sudoku.o intset.o
+
+sudoku.o: sudoku.cpp intset.h
+$(CC) $(CFLAGS) -c sudoku.cpp
+
+intset.o: intset.cpp intset.h
+$(CC) $(CFLAGS) -c intset.cpp
+
+clean:
+rm sudoku sudoku.o intset.o
+
+run1: sudoku
+./sudoku <puzzle1.txt
+
+test: sudoku
+echo "==========================="
+./sudoku <puzzle1.txt
+echo "==========================="
+./sudoku <puzzle2.txt
+echo "==========================="
+./sudoku <puzzle3.txt
+echo "==========================="
