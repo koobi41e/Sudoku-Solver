@@ -1,5 +1,5 @@
 // Author:     Ibook Eyoita
-// File:       sudoku.cpp
+// File:       main.cpp
 // Tab stops:  4
 
 //This program solves an unsolved sudoku puzzle.
